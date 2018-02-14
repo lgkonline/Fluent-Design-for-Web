@@ -135,7 +135,7 @@ footer {
     top: 100vh;
     opacity: 0;
     transform: translate(-50%, -50%);
-    box-shadow: 0 1rem 4rem rgba(85, 85, 85, 0.3);
+    box-shadow: 0 1rem 4rem rgba(85, 85, 85, 0.4);
     max-width: 100vw;
     transition: all .5s;
     z-index: -1;
@@ -160,13 +160,6 @@ footer {
     backdrop-filter: var(--backdrop);
     background-color: rgba(255,255,255,.7);
     overflow: hidden;
-}
-
-@supports not (backdrop-filter: saturate(180%) blur(10px)) {
-    .modal-header,
-    .modal-footer {
-        background-color: rgba(255,255,255,.9);
-    }
 }
 
 .modal-header {
