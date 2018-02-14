@@ -1,0 +1,208 @@
+:root {
+    --backdrop: saturate(180%) blur(10px);
+    --primary-values: 0, 120, 215;
+    --primary: rgba(var(--primary-values), 1);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    margin: 0;
+}
+
+main {
+    background-color: #f3f5f7;
+    box-shadow: inset 0 0 10rem rgba(0,0,0,.1);
+}
+
+a {
+    color: var(--primary);
+}
+
+input, button {
+    font: inherit;
+}
+
+input,
+button,
+textarea {
+    transition: all .2s;
+}
+
+input:focus,
+button:focus,
+textarea:focus {
+    box-shadow: 0 0 0 2px rgba(var(--primary-values), 0.5);
+    border-radius: 1px;
+    outline: none;
+}
+
+.title-section {
+    background: url(https://images.pexels.com/photos/436784/pexels-photo-436784.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb);
+    height: 90vh;
+    background-size: cover;
+    background-position: 0 0;
+    background-attachment: fixed;
+    position: relative;
+}
+.title-section h1 {
+    margin: 0;
+    text-align: center;
+    font-size: 2rem;
+    padding: 2rem;
+    -webkit-backdrop-filter: var(--backdrop);
+    backdrop-filter: var(--backdrop);
+    background-color: rgba(255,255,255,.7);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.content {
+    padding: 3rem calc(50% - 24rem);
+    margin: 0 3rem;
+}
+
+footer {
+    padding: 3rem;
+    text-align: center;
+}
+
+
+/** button */
+
+.btn {
+    background: black;
+    border: none;
+    padding: .7rem 1rem;
+    color: white;
+    text-transform: uppercase;
+    transition: opacity .2s;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::after {
+    content: attr(data-label);
+    background: inherit;
+    position: absolute;
+    top: 2px; right: 2px; bottom: 2px; left: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.btn:hover::after {
+    background-color: rgba(0,0,0,.7);
+}
+
+.btn:hover .btn-ball {
+    opacity: 1;
+}
+
+.btn:active::after {
+    background-color: rgba(0,0,0,.5);
+}
+
+.btn:active .btn-ball {
+    width: 60px;
+    height: 60px;
+}
+
+.btn-ball {
+    position: absolute;
+    opacity: 0;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    top: 50%; left: 50%;
+    background-image: radial-gradient(transparent, rgba(255,255,255, .5), transparent, transparent);
+    transition: all .2s, top 0s, left 0s;
+}
+
+
+/** modal **/
+
+.modal {
+    position: fixed;
+    left: 50%;
+    top: 100vh;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 1rem 4rem rgba(85, 85, 85, 0.3);
+    max-width: 90vw;
+    transition: all .5s;
+    z-index: -1;
+}
+
+.modal.in {
+    top: 50%;
+    opacity: 1;
+    z-index: 1;
+}
+
+.modal-header,
+.modal-body,
+.modal-footer {
+    min-width: 200px;
+}
+
+.modal-header,
+.modal-footer {
+    display: flex;
+    -webkit-backdrop-filter: var(--backdrop);
+    backdrop-filter: var(--backdrop);
+    background-color: rgba(255,255,255,.7);
+    overflow: hidden;
+}
+
+@supports not (backdrop-filter: saturate(180%) blur(10px)) {
+    .modal-header,
+    .modal-footer {
+        background-color: rgba(255,255,255,.9);
+    }
+}
+
+.modal-header {
+    justify-content: space-between;
+}
+
+.modal-header h4 {
+    margin: 0;
+    padding: 1rem;
+    font-weight: normal;
+}
+
+.modal-body {
+    padding: 1rem;
+    background: white;
+}
+
+.modal-footer {
+    justify-content: flex-end;
+    padding: .5rem;
+}
+
+
+/** close **/
+
+.close {
+    width: 52px;
+    border: none;
+    background: transparent;
+    color: black;
+    transition: opacity .2s, background .4s;
+}
+.close:hover {
+    background: rgba(255, 0, 0, 0.5);
+    color: white;
+}
+.close:hover::after {
+    background: rgba(255, 0, 0, 0.3);
+}

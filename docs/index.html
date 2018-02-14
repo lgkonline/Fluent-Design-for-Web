@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>Fluent Design for Web</title>
+
+    <link rel="stylesheet" href="https://lib.lgkonline.com/pill-menu/style.min.css">
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+    <link rel="stylesheet" href="style/main.css">
+</head>
+
+<body>
+    <div class="lgk-pill">
+        <iframe class="lgk-pill-content" src=""></iframe>
+    </div>
+    <div class="lgk-pill-btn black">
+        <span class="lgk-pill-icon"></span>
+    </div>
+    <div class="lgk-pill-wrapper"></div>
+
+    <section class="title-section">
+        <h1>Fluent Design for Web</h1>
+    </section>
+
+    <main>
+        <div class="content">
+            <h1>Browser compatibility</h1>
+
+            <p>
+                This site is using technologies that might not be supported by all browsers yet.
+                <br />Please keep that in mind.
+            </p>
+
+            <button class="btn" data-label="Open modal" onclick="showModal('modal1')">
+                <div class="btn-ball"></div>
+                Open modal
+            </button>
+        </div>
+
+        <footer>
+            In parts of this site I'm using the free version of
+            <a href="https://linearicons.com/">Linearicons</a> by
+            <a href="https://perxis.com/">Perxis</a> which is licensed under the
+            <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> license.
+            <br> &copy; 2018 Lars / LGK
+        </footer>
+    </main>
+
+
+    <div class="modal" id="modal1">
+        <div class="modal-header">
+            <h4>Modal</h4>
+
+            <button class="close btn lnr" data-label="" onclick="hideModal('modal1')">
+                <div class="btn-ball"></div>
+                <span class="lnr lnr-cross"></span>
+            </button>
+        </div>
+
+        <div class="modal-body">
+            <p>
+                Do you like the look of this modal?
+                <br /> Microsoft calls this style "Acrylic" while others call it "Frosted Glass" or "Milky Glass".
+            </p>
+            <p>
+                How ever you wanna call it: On this page it is realized with CSS
+                <code>backdrop-filter</code>, which is sadly not supported by all browsers yet.
+            </p>
+        </div>
+
+        <div class="modal-footer">
+            <button class="btn" data-label="Okay" onclick="hideModal('modal1')">
+                <div class="btn-ball"></div>
+                Okay
+            </button>
+        </div>
+    </div>
+
+    <script src="https://lib.lgkonline.com/pill-menu/script.min.js"></script>
+    <script src="script/main.js"></script>
+</body>
+
+</html>
